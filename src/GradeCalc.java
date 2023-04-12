@@ -2,65 +2,30 @@ import java.util.Scanner;
 
 public class GradeCalc {
     public static void main(String[] args) {
-        //2754번
-        //비루한 지식으로 짜낸 switch문
-        Scanner scan = new Scanner(System.in);
+        //아스키 코드를 활용한 풀이법
+        //A=65, B=66, C=67, D=68
+     Scanner scan=new Scanner(System.in);      
+     String grade=scan.next();
 
-        String grade = scan.next();
-        double score = 0;
-        switch (grade) {
-            case "A+":
-                score = 4.3;
-                break;
+     //F의 경우를 먼저 선언
+     if(grade.equals("F")){
+         System.out.println(0.0);
+         return;
+     }
+     double score=0.0;
+     //charAt으로 입력받은 값의 첫번째 자리를 추출
+        //A의 아스키코드 값은 65이기 때문에 69-65= 4
+        score += 69 - grade.charAt(0);
 
-            case "A0":
-                score = 4.0;
-                break;
-
-            case "A-":
-                score = 3.7;
-                break;
-
-            case "B+":
-                score = 3.3;
-                break;
-
-            case "B0":
-                score = 3.0;
-                break;
-
-            case "B-":
-                score = 2.7;
-                break;
-
-            case "C+":
-                score = 2.3;
-                break;
-
-            case "C0":
-                score = 2.0;
-                break;
-
-            case "C-":
-                score = 1.7;
-                break;
-
-            case "D+":
-                score = 1.3;
-                break;
-
-            case "D0":
-                score = 1.0;
-                break;
-
-            case "D-":
-                score = 0.7;
-                break;
-
-            case "F":
-                score = 0.0;
-                break;
-        }
+        //입력 받은 값의 2번째 값이 +냐 -냐에 따라서 더하고 빼준다.
+        switch (grade.charAt(1)) {
+         case '+':
+             score +=0.3;
+             break;
+         case '-':
+             score -=0.3;
+             break;
+     }
         System.out.println(score);
     }
 }
