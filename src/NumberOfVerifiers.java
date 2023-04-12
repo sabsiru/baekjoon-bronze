@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class NumberOfVerifiers {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        //2475번 문제
         //5개의 숫자를 배열을 선언하고
         int a[] = new int[5];
         //입력받은 숫자의 제곱을 담을 배열을 선언하고
