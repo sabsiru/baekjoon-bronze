@@ -2,30 +2,22 @@ import java.util.Scanner;
 
 public class AfterParty {
     public static void main(String[] args) {
-        //2845번
+        //2845번 배열 사용
         Scanner scan = new Scanner(System.in);
 
-        int L = scan.nextInt();
-        int p = scan.nextInt();
-        int people = L * p;
+        int l = scan.nextInt(); //사람의수
+        int p = scan.nextInt(); //면적
+        int people = l * p; //총 참가자
 
-        int a = scan.nextInt();
-        int b = scan.nextInt();
-        int c = scan.nextInt();
-        int d = scan.nextInt();
-        int e = scan.nextInt();
-
-        int ar = a - people;
-        int br = b - people;
-        int cr = c - people;
-        int dr = d - people;
-        int er = e - people;
-
-        System.out.println(ar);
-        System.out.println(br);
-        System.out.println(cr);
-        System.out.println(dr);
-        System.out.println(er);
-        scan.close();
+       int news[]=new int[5]; //기사의 참가자수를 담을 배열
+        int result[]=new int[5]; //기사와 참가자 수의 차이를 담을 배열
+       for (int i = 0; i < news.length; i++) {
+           news[i] = scan.nextInt();
+           result[i]= news[i]-people;
+       }
+       scan.close();
+       for(int i=0; i< result.length;i++){
+           System.out.println(result[i]);
+       }
     }
 }
