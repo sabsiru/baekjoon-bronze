@@ -8,7 +8,6 @@ public class Basic_N {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String m=br.readLine();
         int n=Integer.parseInt(m);
-
         br.close();
         for(int i=n; i>0; i--) {
             System.out.println(i);
